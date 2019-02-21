@@ -1,0 +1,16 @@
+#map-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mapboxgl-canvas {
+  position: static!important;
+}
+
+/* .mapboxgl-map {
+  margin: 0 auto!important;
+} */
+
+/* .mapboxgl-canvas-container {
+  width: 100%!important;
+} */
