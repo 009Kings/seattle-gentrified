@@ -1,7 +1,7 @@
 import points from './points.json'
 
 export default points.map(point=>{
-  point.value *= 20
+  point.weight *= 1000
   return point
 })
 

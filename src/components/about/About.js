@@ -69,7 +69,6 @@ const About = () => {
 			Predict house price using regression<br />
 	    	
 	    </p>
-
     </div>
   )
 }

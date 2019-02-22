@@ -8,8 +8,6 @@ import AdditionalResources from './components/additionalResources/AdditionalReso
 import './App.css';
 import needle from './SpaceNeedle.svg';
 
-
-
 class App extends Component {
 	constructor(){
 		super();
@@ -94,7 +92,7 @@ class App extends Component {
 					</div>
 					<div className="right-2">
 						<h2>Where gentrification is happening</h2>
-						<p>Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada de text i la va mesclar per crear un llibre de mostres tipogràfiques. No només ha sobreviscut cinc segles, sinó que ha fet el salt cap a la creació de tipus de lletra electrònics, romanent essencialment sense canvis.</p>					
+						<p>Using a cross-section of datapoints including increase of police calls, increase in house prices, increase in suspicious person calls and housing code violations relating to tenant rights, a point is placed on the map with a weight based on the forementioned parameters. The more red the area, the heigher the frequency and gentrification weight of its points. For each feature, data was clustered by latitude and longitude.</p>
 					</div>
 				</div>
 				<div className="chartContainer" className="section">

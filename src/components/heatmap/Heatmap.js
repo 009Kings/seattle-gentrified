@@ -5,6 +5,8 @@ import Quote from './Quote';
 import GeoJSON from 'geojson';
 import newPoints from '../../fixJson';
 
+console.log(newPoints)
+
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA",
   minZoom: 8,
@@ -13,17 +15,19 @@ const Map = ReactMapboxGl({
 
 const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
-  "data": GeoJSON.parse(newPoints, {Point: ["lat", "long"]})
+  "data": GeoJSON.parse(newPoints, {Point: ["lat", "lon"]})
 }
 
+console.log(GeoJSON.parse(newPoints, {Point: ["lat", "lon"]}))
+
 const PAINT_OPTIONS ={
-    // Increase the heatmap weight based on frequency and property magnitude
+    // Increase the heatmap weight based on "weight" of gentrification on the point
   "heatmap-weight": [
       "interpolate",
       ["linear"],
-      ["get", "value"],
+      ["get", "weight"],
       0, 0,
-      5, 1
+      10, 1
     ],
     // Increase the heatmap color weight weight by zoom level
     // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -35,8 +39,6 @@ const PAINT_OPTIONS ={
       9, 3
     ],
     // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-    // Begin color ramp at 0-stop with a 0-transparancy color
-    // to create a blur-like effect.
     "heatmap-color": [
       "interpolate",
       ["linear"],
@@ -54,7 +56,7 @@ const PAINT_OPTIONS ={
       ["linear"],
       ["zoom"],
       0, 2,
-      1, 15
+      5, 15
     ],
 }
 
