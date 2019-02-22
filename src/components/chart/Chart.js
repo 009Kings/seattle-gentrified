@@ -25,7 +25,7 @@ class Chart extends Component{
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Affected neighborhoods in '+this.props.location,
+              text:'Relocations by year in '+this.props.location,
               fontSize:25
             },
             legend:{
@@ -41,13 +41,14 @@ class Chart extends Component{
             }
           }}
         />
-        <Pie
+        <br /> <br />
+        <Line
           data={this.state.chartData}
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Affected neighborhoods in '+this.props.location,
-              fontSize:25
+              text:'Relocations by year in '+this.props.location,
+              fontSize:25,
             },
             legend:{
               display:this.props.displayLegend,

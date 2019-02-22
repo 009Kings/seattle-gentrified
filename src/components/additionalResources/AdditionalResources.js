@@ -5,7 +5,7 @@ const AdditionalResources = () => {
   return (
     <div className="resourcesContainer">
 	    <a name="Additional"></a>
-	    <h1>Additional Resources</h1>
+	    <h2>Additional Resources</h2>
 	    <p><strong>Seattle-specific gentrification & related information</strong></p>
 	    <ul>
 			<li><a href="http://www.governing.com/gov-data/seattle-gentrification-maps-demographic-data.html">Seattle Gentrification Maps and Data</a></li>
