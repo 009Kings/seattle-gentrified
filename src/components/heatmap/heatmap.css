@@ -1,16 +1,28 @@
 #map-container {
-  width: 80%;
+  width: 50vw;
   margin: 0 auto;
+  height: 50vh;
+  position: relative;
 }
 
 .mapboxgl-canvas {
-  position: static!important;
+  /* position: static!important; */
+  margin: 0 auto;
+  left: 0;
+  /* transform: translate(-25%, 0%); */
 }
 
-/* .mapboxgl-map {
+.mapboxgl-map {
   margin: 0 auto!important;
-} */
+}
 
-/* .mapboxgl-canvas-container {
-  width: 100%!important;
-} */
+.mapboxgl-canvas-container {
+  /* width: 100%!important; */
+  text-align: center!important;
+}
+
+@media (max-width: 600px) {
+  #map-container {
+    width: 100%;
+  }
+}
