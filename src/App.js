@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Heatmap from './components/heatmap/Heatmap';
 import Nav from './components/Nav';
 import Chart from './components/chart/Chart';
+import DataSources from './components/about/DataSources';
 import About from './components/about/About';
 import AdditionalResources from './components/additionalResources/AdditionalResources';
 
@@ -108,6 +109,11 @@ class App extends Component {
 				<div className="section">
 					<div className="left-3">
 						<AdditionalResources />
+					</div>
+				</div>
+				<div className="section">
+					<div className="full-row">
+						<DataSources />
 					</div>
 				</div>
 				<div className="section" >
