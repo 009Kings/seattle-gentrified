@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
 import Quote from './Quote';
 import GeoJSON from 'geojson';
-import points from '../../points.json';
+import newPoints from '../../fixJson';
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA"
@@ -11,15 +11,17 @@ const Map = ReactMapboxGl({
 
 const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
-  "data": GeoJSON.parse(points, {Point: ["lat", "long"]})
+  "data": GeoJSON.parse(newPoints, {Point: ["lat", "long"]})
 }
+
+console.log(GeoJSON.parse(newPoints, {Point: ["lat", "long"]}));
 
 const PAINT_OPTIONS ={
     // Increase the heatmap weight based on frequency and property magnitude
   "heatmap-weight": [
       "interpolate",
       ["linear"],
-      ["get", "mag"],
+      ["get", "value"],
       0, 0,
       6, 1
     ],
@@ -52,7 +54,7 @@ const PAINT_OPTIONS ={
       ["linear"],
       ["zoom"],
       0, 2,
-      9, 20
+      1, 15
     ],
 }
 
