@@ -51,14 +51,6 @@ const PAINT_OPTIONS ={
       0, 2,
       9, 20
     ],
-    // Transition from heatmap to circle layer by zoom level
-    "heatmap-opacity": [
-      "interpolate",
-      ["linear"],
-      ["zoom"],
-      7, 1,
-      9, 0
-    ],
 }
 
 class Heatmap extends Component {
@@ -67,6 +59,7 @@ handleStyleLoad = map => (map.resize())
   render() {
     return (
       <div id="map-container">
+        <a name="Heatmap"></a>
         <Map
           style="mapbox://styles/mapbox/streets-v9?optimize=true"
           container="map-container"
