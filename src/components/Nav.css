@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr repeat(5, 2fr) 1fr;
   overflow: hidden;
-  background-color: gray;
+  background-color: lightgray;
   z-index: 10;
 }
 
@@ -11,17 +11,16 @@
 #navbar a {
   float: right;
   display: block;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
-  padding: 14px;
+  padding: 14px 14px 5px 14px;
   text-decoration: none;
   font-weight: 500;
-  letter-spacing: .02em;
-
+  vertical-align: baseline;
 }
 
 #navbar a:hover {
-  color: lightgray;
+  color: gray;
 }
 
 #navbar ul li a.current {

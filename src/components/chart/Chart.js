@@ -12,8 +12,7 @@ class Chart extends Component{
   static defaultProps = {
     displayTitle:true,
     displayLegend: true,
-    legendPosition:'right',
-    location:'Neighborhood'
+    legendPosition:'right'
   }
 
   render(){
@@ -25,8 +24,9 @@ class Chart extends Component{
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Relocations by year in '+this.props.location,
-              fontSize:25
+              text:'Relocations by year in Seattle',
+              fontSize:20,
+              fontColor: 'black'
             },
             legend:{
               display:this.props.displayLegend,
@@ -38,21 +38,6 @@ class Chart extends Component{
                   beginAtZero: true
                 }
               }]
-            }
-          }}
-        />
-        <br /> <br />
-        <Line
-          data={this.state.chartData}
-          options={{
-            title:{
-              display:this.props.displayTitle,
-              text:'Relocations by year in '+this.props.location,
-              fontSize:25,
-            },
-            legend:{
-              display:this.props.displayLegend,
-              position:this.props.legendPosition
             }
           }}
         />
