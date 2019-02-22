@@ -1,18 +1,31 @@
 
 #navbar {
+  display: grid;
+  grid-template-columns: 1fr repeat(5, 2fr) 1fr;
   overflow: hidden;
-  background-color: #333;
+  background-color: gray;
   z-index: 10;
 }
 
 /* Navbar links */
 #navbar a {
-  float: left;
+  float: right;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  font-weight: 500;
+  letter-spacing: .02em;
+
+}
+
+#navbar a:hover {
+  color: lightgray;
+}
+
+#navbar ul li a.current {
+  color: black;
 }
 
 /* Page content */
