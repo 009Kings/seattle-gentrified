@@ -24,7 +24,7 @@ class Chart extends Component{
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Relocations by year in Seattle',
+              text:'',
               fontSize:20,
               fontColor: 'black'
             },

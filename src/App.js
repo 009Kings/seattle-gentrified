@@ -98,14 +98,13 @@ class App extends Component {
 					</div>
 				</div>
 				<div className="chartContainer" className="section">
-					<div className="left-2">
-						<h2>Increasing relocations</h2>
-						<p>Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada de text i la va mesclar per crear un llibre de mostres tipogràfiques. No només ha sobreviscut cinc segles, sinó que ha fet el salt cap a la creació de tipus de lletra electrònics, romanent essencialment sense canvis.</p>					
 
-					</div>
-					<div className="right-3">
+					<div className="full-row">
+						<h2>Total tenant relocation ordinace reports by year</h2><br /> 
+
 						<Chart chartData={this.state.chartData} location="Seattle" legendPosition="bottom"/>
 					</div>
+
 				</div>
 				<div className="section">
 					<div className="left-3">
