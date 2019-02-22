@@ -77,7 +77,7 @@ class App extends Component {
 				<br /><br />
 				</div>
 				<div className="section">
-					<div className="left-1">
+					<div className="left-1" id="needle">
 			            <img src={needle} alt="Seattle Space Needle" />
 		            </div>
 		            <div className="right-4">
