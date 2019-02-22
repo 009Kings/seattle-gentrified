@@ -7,3 +7,33 @@
   width: 50%;
   margin: 0 auto;
 }
+
+.aboutContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.aboutContainer > h1 {
+	text-align: center;
+}
+
+.aboutContainer > p {
+	text-align: left;
+}
+
+.resourcesContainer {
+  width: 50%;
+  margin: 0 auto;	
+}
+
+.resourcesContainer >h1 {
+	text-align: center;
+}
+
+.resourcesContainer > p, ul, li, a {
+	text-align: left;
+}
+
+.resourcesContainer > ul {
+/*	list-style: none;
+*/}
