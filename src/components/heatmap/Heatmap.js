@@ -6,15 +6,15 @@ import GeoJSON from 'geojson';
 import newPoints from '../../fixJson';
 
 const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA"
+  accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA",
+  minZoom: 8,
+  maxZoom: 15,
 });
 
 const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
   "data": GeoJSON.parse(newPoints, {Point: ["lat", "long"]})
 }
-
-console.log(GeoJSON.parse(newPoints, {Point: ["lat", "long"]}));
 
 const PAINT_OPTIONS ={
     // Increase the heatmap weight based on frequency and property magnitude
@@ -23,7 +23,7 @@ const PAINT_OPTIONS ={
       ["linear"],
       ["get", "value"],
       0, 0,
-      6, 1
+      5, 1
     ],
     // Increase the heatmap color weight weight by zoom level
     // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -66,6 +66,7 @@ handleStyleLoad = map => (map.resize())
       <div id="map-container">
         <a name="Heatmap"></a>
         <Map
+          className="Map"
           style="mapbox://styles/mapbox/streets-v9?optimize=true"
           container="map-container"
           center={{lon: -122.335167, lat:47.608013 }}
