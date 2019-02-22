@@ -3,6 +3,8 @@ import './App.css';
 import Heatmap from './components/heatmap/Heatmap';
 import Nav from './components/Nav';
 import Chart from './components/chart/Chart';
+import About from './components/about/About';
+import AdditionalResources from './components/additionalResources/AdditionalResources';
 
 
 class App extends Component {
@@ -72,7 +74,9 @@ class App extends Component {
 				<Heatmap />
 				<div className="chartContainer">
 					<Chart chartData={this.state.chartData} location="Seattle" legendPosition="bottom"/>
-				</div>		
+				</div>
+				<AdditionalResources />
+				<About />	
 	        </div>
 		);
 	}

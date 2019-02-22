@@ -19,7 +19,7 @@ class Chart extends Component{
   render(){
     return (
       <div className="chart">
-      <a name="Chart"></a>
+      <a name="Graph"></a>
         <Bar
           data={this.state.chartData}
           options={{
