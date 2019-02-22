@@ -18,7 +18,6 @@ class App extends Component {
 		}
 	}
 
-
 	componentWillMount(){
 		this.getChartData();
 	}
@@ -74,12 +73,18 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Nav />
+				<div className="buffer">
+				<br /><br />
+				</div>
+				<div className="section">
+					<div className="left-1">
+			            <img src={needle} alt="Seattle Space Needle" />
+		            </div>
+		            <div className="right-4">
+						<h1>Gentrification & Displacement in Seattle</h1>
+						<p><strong>&ldquo;Gentrification [is] the process of neighborhood change</strong> that results in the replacement of lower income residents with higher income ones.&rdquo;  &mdash;<em>(Kennedy and Leonard, 2001a, p. 1)</em></p>
 
-				<div className="homeContainer" className="section">
-					<div className="left-2">
-			            <img src={needle} alt="Seattle Space Needle" width="80px" />
-						<h1>Gentrification &<br />Displacement in Seattle</h1>
-						<p>The city of Seattle has been growing rapdily for several years. As population increases, housing costs rise, and that can cause displacement, especially for communities of lower income or color.</p>
+						<p>The city of Seattle has been growing rapdily for several years. As population increases, housing costs rise. Lower-income communities and communities of color are at elevated risk for displacement.</p>
 					</div>
 
 				</div>
@@ -95,8 +100,6 @@ class App extends Component {
 				<div className="chartContainer" className="section">
 					<div className="left-2">
 						<h2>Increasing relocations</h2>
-
-						<p>Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada de text i la va mesclar per crear un llibre de mostres tipogràfiques. No només ha sobreviscut cinc segles, sinó que ha fet el salt cap a la creació de tipus de lletra electrònics, romanent essencialment sense canvis.</p>	
 						<p>Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada de text i la va mesclar per crear un llibre de mostres tipogràfiques. No només ha sobreviscut cinc segles, sinó que ha fet el salt cap a la creació de tipus de lletra electrònics, romanent essencialment sense canvis.</p>					
 
 					</div>
