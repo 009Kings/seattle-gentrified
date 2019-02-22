@@ -3,23 +3,15 @@
   margin: 0 auto;
   height: 50vh;
   position: relative;
+  float: left;
+
 }
 
 .mapboxgl-canvas {
-  /* position: static!important; */
   margin: 0 auto;
   left: 0;
-  /* transform: translate(-25%, 0%); */
 }
 
-.mapboxgl-map {
-  margin: 0 auto!important;
-}
-
-.mapboxgl-canvas-container {
-  /* width: 100%!important; */
-  text-align: center!important;
-}
 
 @media (max-width: 600px) {
   #map-container {

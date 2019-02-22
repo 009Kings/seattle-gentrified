@@ -1,14 +1,19 @@
 import './heatmap.css'
 import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
+import Quote from './Quote';
+import GeoJSON from 'geojson';
+import newPoints from '../../fixJson';
 
 const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA"
+  accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA",
+  minZoom: 8,
+  maxZoom: 15,
 });
 
 const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
-  "data": "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+  "data": GeoJSON.parse(newPoints, {Point: ["lat", "long"]})
 }
 
 const PAINT_OPTIONS ={
@@ -16,9 +21,9 @@ const PAINT_OPTIONS ={
   "heatmap-weight": [
       "interpolate",
       ["linear"],
-      ["get", "mag"],
+      ["get", "value"],
       0, 0,
-      6, 1
+      5, 1
     ],
     // Increase the heatmap color weight weight by zoom level
     // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -49,7 +54,7 @@ const PAINT_OPTIONS ={
       ["linear"],
       ["zoom"],
       0, 2,
-      9, 20
+      1, 15
     ],
 }
 
@@ -58,25 +63,29 @@ handleStyleLoad = map => (map.resize())
 
   render() {
     return (
-      <div id="map-container">
-        <a name="Heatmap"></a>
-        <Map
-          style="mapbox://styles/mapbox/streets-v9?optimize=true"
-          container="map-container"
-          center={{lon: -122.335167, lat:47.608013 }}
-          zoom={[10]}
-          containerStyle={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            width: 'inherit',
-            height: 'inherit',
-            }} // Style of the map container
-          onStyleLoad={this.handleStyleLoad}
-          >
-            <Source id="source_id" tileJsonSource={HEATMAP_SOURCE_OPTIONS} />
-            <Layer type="heatmap" id="layer_id" sourceId="source_id" paint={PAINT_OPTIONS} />
-        </Map>
+      <div className="heatmap-section">
+        <div id="map-container">
+          <a name="Heatmap"></a>
+          <Map
+            className="Map"
+            style="mapbox://styles/mapbox/streets-v9?optimize=true"
+            container="map-container"
+            center={{lon: -122.335167, lat:47.608013 }}
+            zoom={[10]}
+            containerStyle={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              width: 'inherit',
+              height: 'inherit',
+              }} // Style of the map container
+            onStyleLoad={this.handleStyleLoad}
+            >
+              <Source id="source_id" tileJsonSource={HEATMAP_SOURCE_OPTIONS} />
+              <Layer type="heatmap" id="layer_id" sourceId="source_id" paint={PAINT_OPTIONS} />
+          </Map>
+        </div>
+        <Quote />
       </div>
     )
   }

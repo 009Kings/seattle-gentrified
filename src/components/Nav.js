@@ -29,12 +29,12 @@ const Nav = () => {
   return (
     <nav id="navbar" className="sticky">
 	    <div className="full-row">
-			<a href="#About">About</a>
-			<a href="#Additional">Resources</a>
-			<a href="#Graph">Graph</a>
-			<a href="#Heatmap">Map</a>
-			<a href="#">Home</a>
-		</div>
+        <a href="#About">About</a>
+        <a href="#Additional">Resources</a>
+        <a href="#Graph">Graph</a>
+        <a href="#Heatmap">Map</a>
+        <a href="#">Home</a>
+		  </div>
     </nav>
   )
 }
