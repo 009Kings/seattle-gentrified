@@ -1,6 +1,9 @@
 import './heatmap.css'
 import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
+import Quote from './Quote';
+import GeoJSON from 'geojson';
+import points from '../../points.json';
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA"
@@ -8,7 +11,7 @@ const Map = ReactMapboxGl({
 
 const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
-  "data": "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+  "data": GeoJSON.parse(points, {Point: ["lat", "long"]})
 }
 
 const PAINT_OPTIONS ={
@@ -77,6 +80,7 @@ handleStyleLoad = map => (map.resize())
             <Source id="source_id" tileJsonSource={HEATMAP_SOURCE_OPTIONS} />
             <Layer type="heatmap" id="layer_id" sourceId="source_id" paint={PAINT_OPTIONS} />
         </Map>
+        <Quote />
       </div>
     )
   }
