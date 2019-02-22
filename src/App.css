@@ -2,3 +2,8 @@
   text-align: center;
   padding-top: 4em;
 }
+
+.chartContainer {
+  width: 50%;
+  margin: 0 auto;
+}
