@@ -111,7 +111,7 @@ class App extends Component {
 					</div>
 				</div>
 				<div className="section" >
-					<div className="right-3">
+					<div className="full-row">
 						<About />
 					</div>	
 				</div>
