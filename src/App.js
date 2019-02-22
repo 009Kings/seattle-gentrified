@@ -25,43 +25,44 @@ class App extends Component {
 		// this is where we gotta get the real data
 		this.setState({
 			chartData:{
-				labels: ['Beacon Hill', 'Columbia City', 'Greenwood', 'Northgate', 'Rainier Valley', 'White Center'],
+				labels: [2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013,
+					2014,
+					2015,
+					2016,
+					2017,
+					2018],
 				datasets:[
 					{
-					label:'2013',
+					label: 'relocations per year',
 					data:[
-						150,
-						200,
-						225,
-						150,
-						130,
-						175
+						13,
+						207,
+						216,
+						227,
+						289,
+						120,
+						92,
+						61,
+						58,
+						108,
+						103,
+						184,
+						241,
+						210,
+						199,
+						75
 						],
 					backgroundColor: 'lightgray'
-					},
-				{
-					label:'2015',
-					data:[
-						200,
-						300,
-						205,
-						100,
-						220,
-						205
-					],
-					backgroundColor: 'darkgray'            
-					},
-				{
-					label:'2018',
-					data:[
-						220,
-						305,
-						200,
-						150,
-						230,
-						180
-					],
-					backgroundColor: 'gray'            
 					}
 				]
 			}
