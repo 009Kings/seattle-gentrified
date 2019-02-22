@@ -3,7 +3,8 @@
   margin: 0 auto;
   height: 50vh;
   position: relative;
-  display: flex;
+  float: left;
+
 }
 
 .mapboxgl-canvas {

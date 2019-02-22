@@ -63,26 +63,28 @@ handleStyleLoad = map => (map.resize())
 
   render() {
     return (
-      <div id="map-container">
-        <a name="Heatmap"></a>
-        <Map
-          className="Map"
-          style="mapbox://styles/mapbox/streets-v9?optimize=true"
-          container="map-container"
-          center={{lon: -122.335167, lat:47.608013 }}
-          zoom={[10]}
-          containerStyle={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            width: 'inherit',
-            height: 'inherit',
-            }} // Style of the map container
-          onStyleLoad={this.handleStyleLoad}
-          >
-            <Source id="source_id" tileJsonSource={HEATMAP_SOURCE_OPTIONS} />
-            <Layer type="heatmap" id="layer_id" sourceId="source_id" paint={PAINT_OPTIONS} />
-        </Map>
+      <div className="heatmap-section">
+        <div id="map-container">
+          <a name="Heatmap"></a>
+          <Map
+            className="Map"
+            style="mapbox://styles/mapbox/streets-v9?optimize=true"
+            container="map-container"
+            center={{lon: -122.335167, lat:47.608013 }}
+            zoom={[10]}
+            containerStyle={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              width: 'inherit',
+              height: 'inherit',
+              }} // Style of the map container
+            onStyleLoad={this.handleStyleLoad}
+            >
+              <Source id="source_id" tileJsonSource={HEATMAP_SOURCE_OPTIONS} />
+              <Layer type="heatmap" id="layer_id" sourceId="source_id" paint={PAINT_OPTIONS} />
+          </Map>
+        </div>
         <Quote />
       </div>
     )
