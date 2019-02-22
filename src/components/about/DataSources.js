@@ -18,43 +18,21 @@ const DataSources = () => {
         <p><strong>Seattle Police Department 911 Incidents Response (<a href="https://www.kaggle.com/sohier/seattle-police-department-911-incident-response">Kaggle, City of Seattle Open Data</a>)</strong>
         <em>~1,430,000 entries, from 2009-2018</em>
         <br /><strong>Feature used:</strong> Feature used: Suspicious person reports. We speculated suspicious person reports would increase with gentrification (aka the Barbeque Becky Index).</p>
+        
+        <p><strong>Seattle Code Violation Cases (<a href="https://www.kaggle.com/city-of-seattle/seattle-code-violation-cases">Kaggle, City of Seattle Open Data</a>)</strong>
+        <em>~41,000 entries, from 2003-2018</em>
+        <br /><strong>Feature used:</strong> Tenant Reloction Ordinance records, indicating where low-income tenants forced to relocate due to buildings being torn down or renovated.</p>
+        
+        <p><strong>House Sales in King County, USA (<a href="https://www.kaggle.com/harlfoxem/housesalesprediction">Kaggle, Public Domain</a>)</strong>
+        <em>~21,000 entries, from 2014 - 2015</em>
+        <br /><strong>Feature used:</strong> Feature used: House sales, weighted by price.</p>
+        <p><em>All datasets included latitude and longitude.</em></p>
 
-        <br /><br />Seattle Code Violation Cases (Kaggle, City of Seattle Open Data)
-        ~41,000 entries, from 2003-2018
-        Feature used: Tenant Reloction Ordinance records, indicating where low-income tenants forced to relocate due to buildings being torn down or renovated.
-        https://www.kaggle.com/city-of-seattle/seattle-code-violation-cases
-
-        <br /><br />
-        House Sales in King County, USA (Kaggle, Public Domain)
-        ~21,000 entries, from 2014 - 2015
-        Feature used: House sales, weighted by price.
-        https://www.kaggle.com/harlfoxem/housesalesprediction
-
-        <br /><br />All datasets included latitude and longitude.
-
-
-
-        <br /><br /><strong>Process:</strong> 
+        <br /><strong>Process:</strong> 
         <br />
         For each feature, data was clustered by latitude and longitude.<br />
 
         <br />Clustering used DBSCAN (Density-Based Spatial Clustering of Applications with Noise) with ball tree algorithm and haversine metric. Note using latitude and longitude is troublesome as the relationship between distance and degrees varies between the equator and the poles. We were not concerned with this issue because we were only dealing with a very local area. The resulting cluster midpoints were assigned a weight (count of data in cluster/total number of instances in the dataset). The resulting lat/long pairs with weights (for each feature) were then again clustered, returning one set of lat/long pairs with weights generalizing all our features. <br /><br />
-        kaggle.com<br />
-        Seattle Police Reports<br />
-        Seattle Police Reports<br />
-        kaggle.com<br />
-        Seattle Land Use Permits<br />
-        From City of Seattle Open Data<br />
-        kaggle.com<br />
-        Seattle Police Department 911 Incident Response<br />
-        1.4 million responses from 2009 onwards<br />
-        kaggle.com<br />
-        Seattle Code Violation Cases<br />
-        From City of Seattle Open Data<br />
-        kaggle.com<br />
-        House Sales in King County, USA<br />
-        Predict house price using regression<br />
-          
         </p>
     </div>
   )
