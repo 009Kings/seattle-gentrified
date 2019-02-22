@@ -38,3 +38,25 @@
   top: 0;
   width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  #navbar {
+    display: grid;
+    grid-template-columns: 10px repeat(5, 2fr) 10px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  #navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 15px 5px 0px;
+    text-decoration: none;
+    font-weight: 500;
+    vertical-align: baseline;
+    font-size: 13px;
+  }
+
+}
