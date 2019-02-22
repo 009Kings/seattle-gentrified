@@ -8,8 +8,6 @@ import AdditionalResources from './components/additionalResources/AdditionalReso
 import './App.css';
 import needle from './SpaceNeedle.svg';
 
-
-
 class App extends Component {
 	constructor(){
 		super();
@@ -94,7 +92,7 @@ class App extends Component {
 					</div>
 					<div className="right-2">
 						<h2>Where gentrification is happening</h2>
-						<p>Using a cross-section of datapoints including increase of police calls, increase in house prices, increase in suspicious person calls and housing code violations relating to tenant rights, a point is placed on the map with a weight based on the forementioned parameters. The more red the area, the heigher the frequency and gentrification weight of its points.</p>					
+						<p>Using a cross-section of datapoints including increase of police calls, increase in house prices, increase in suspicious person calls and housing code violations relating to tenant rights, a point is placed on the map with a weight based on the forementioned parameters. The more red the area, the heigher the frequency and gentrification weight of its points. For each feature, data was clustered by latitude and longitude.</p>
 					</div>
 				</div>
 				<div className="chartContainer" className="section">
