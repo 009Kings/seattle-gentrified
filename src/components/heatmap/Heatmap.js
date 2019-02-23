@@ -1,11 +1,9 @@
 import './heatmap.css'
 import React, { Component } from 'react';
-import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Source } from "react-mapbox-gl";
 import Quote from './Quote';
 import GeoJSON from 'geojson';
 import newPoints from '../../fixJson';
-
-console.log(newPoints)
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiYm9kaGkta2luZyIsImEiOiJjanFta3hod3cxYnBpNDNtMDAxd2N1cXB4In0.orNcNCcYg6Kmat20sEZ8wA",
@@ -17,8 +15,6 @@ const HEATMAP_SOURCE_OPTIONS = {
   "type": "geojson",
   "data": GeoJSON.parse(newPoints, {Point: ["lat", "lon"]})
 }
-
-console.log(GeoJSON.parse(newPoints, {Point: ["lat", "lon"]}))
 
 const PAINT_OPTIONS ={
     // Increase the heatmap weight based on "weight" of gentrification on the point
@@ -70,7 +66,7 @@ handleStyleLoad = map => (map.resize())
           <a name="Heatmap"></a>
           <Map
             className="Map"
-            style="mapbox://styles/mapbox/streets-v9?optimize=true"
+            style="mapbox://styles/mapbox/navigation-preview-night-v4?optimize=true"
             container="map-container"
             center={{lon: -122.335167, lat:47.608013 }}
             zoom={[10]}
